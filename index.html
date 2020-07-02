@@ -1,1 +1,117 @@
-<p>Hello, world!</p>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+        <link href="assets/mlntc-icons/style.css" rel="stylesheet">
+        <style>
+            @keyframes blink {
+                0%,40%,100% {
+                    opacity: 0;
+                }
+                50%,90% {
+                    opacity: 1;
+                }
+            }
+            body {
+                margin: 0;
+                background-color: #111;
+                background-image: linear-gradient(120deg, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 100%);
+                color: #fff;
+                font-family: 'Roboto Mono', monospace;
+            }
+            #pagewrapper {
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+                width: 100%;
+            }
+            #sideimage {
+                background-image: url('assets/side.png');
+                height: 100vh;
+                width: 35%;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+            }
+            #sideimage #menu {
+                background-color: rgba(0,0,0,0.5);
+                padding: 20px 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            #sidecontent {
+                height: 100%;
+                width: 65%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            #contentwrapper {
+                margin: 0 20%;
+            }
+            #title {
+                font-size: 320%;
+                margin: 0 0 40px 0;
+            }
+            .content {
+                margin: 10px 0;
+            }
+            .caption {
+                color: #808080;
+            }
+            a {
+                color: rgb(212, 212, 212);
+                text-decoration: none;
+                transition: ease-in-out 0.2s color;
+            }
+            a:hover {
+                color: white;
+            }
+            #titlecursor {
+                animation: blink 1s infinite;
+            }
+            
+        </style>
+        <script>
+            window.onload = function() {
+                var title = '@mlntcandy'.split('');
+                var titleDOM = document.getElementById('title');
+                var i = 0;
+                var typed = '';
+                var typer = setInterval(function() {
+                    typed = typed + title[i];
+                    titleDOM.innerHTML = typed + '<span id="titlecursor">_</span>';
+                    i++;
+                    if (title.length == i) {
+                        clearTimeout(typer);
+                    }
+                }, 70);
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="pagewrapper">
+            <div id="sideimage">
+                <div id="menu">
+                    <a href="https://github.com/mlntcandy"><span class="icon-github"></span> Github</a>
+                    <a href="https://t.me/mlntcandy"><span class="icon-telegram"></span> Telegram</a>
+                    <a href="mailto:me@mlntcandy.com"><span class="icon-mail"></span> me@mlntcandy.com</a>
+                </div>
+            </div>
+            <div id="sidecontent">
+                <div id="contentwrapper">
+                    <div id="title">
+                        @mlntcandy
+                    </div>
+                    <div class="content">
+                        full stack web-developer & designer
+                    </div>
+                    <div class="caption">frontend: vanilla js, html, css</div>
+                    <div class="caption">backend: node.js, php</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
