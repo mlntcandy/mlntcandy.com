@@ -1,0 +1,42 @@
+@font-face {
+  font-family: 'mlntc-icons';
+  src:  url('fonts/mlntc-icons.eot?5moavr');
+  src:  url('fonts/mlntc-icons.eot?5moavr#iefix') format('embedded-opentype'),
+    url('fonts/mlntc-icons.ttf?5moavr') format('truetype'),
+    url('fonts/mlntc-icons.woff?5moavr') format('woff'),
+    url('fonts/mlntc-icons.svg?5moavr#mlntc-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'mlntc-icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-mail:before {
+  content: "\e900";
+}
+.icon-discord:before {
+  content: "\e901";
+}
+.icon-github:before {
+  content: "\e902";
+}
+.icon-telegram:before {
+  content: "\e903";
+}
+.icon-vk:before {
+  content: "\e904";
+}
