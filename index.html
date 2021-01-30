@@ -3,12 +3,34 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
         <link href="assets/mlntc-icons/style.css" rel="stylesheet">
         <style>
+            html {
+                overflow-y: scroll;
+            }
+            html::-webkit-scrollbar {
+                width: 5px;
+                background-color: rgba(0,0,0,0);
+            }
+
+            html::-webkit-scrollbar-thumb {
+                background: #afafaf;
+                border-radius: 5px;
+            }
             @keyframes blink {
                 50%,90% {
                     opacity: 0;
                 }
                 0%,40%,100% {
                     opacity: 1;
+                }
+            }
+            @keyframes fadein {
+                0% {
+                    opacity: 0;
+                    transform: scale(0.9);
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale(1);
                 }
             }
             body {
@@ -21,12 +43,22 @@
             #pagewrapper {
                 display: flex;
                 flex-direction: row;
-                height: 100%;
+                height: 100vh;
                 width: 100%;
+                animation: fadein 0.5s ease 0s 1;
+            }
+            #morewrapper {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                min-height: 100vh;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.03);
             }
             #sideimage {
                 background-image: url('assets/side.jpg');
-                height: 100vh;
+                height: 100%;
                 width: 35%;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -35,7 +67,9 @@
             }
             #sideimage #menu {
                 background-color: rgba(0,0,0,0.5);
-                padding: 20px 10px;
+                padding: 15px 5px;
+                margin: 5px;
+                border-radius: 7px;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around;
@@ -71,6 +105,73 @@
             #titlecursor {
                 animation: blink 1s infinite;
             }
+            #more {
+                margin-top: 20px;
+                color: #afafaf;
+                font-size: 120%;
+                letter-spacing: 2px;
+                cursor: pointer;
+                transition: 0.2s ease;
+            }
+            #more:hover {
+                letter-spacing: 4px;
+                color: #cfcfcf;
+            }
+
+            .card {
+                background-color: rgba(0,0,0,0.5);
+                border-radius: 7px;
+                margin: 20px 10px;
+                padding: 20px;
+                display: inline-block;
+                align-items: center;
+                width: 400px;
+                transition: .2s ease;
+            }
+            .card:hover {
+                transform: scale(1.02);
+                filter: brightness(1.3);
+            }
+            .card .title {
+                font-size: 200%;
+                margin: 20px 0;
+            }
+            .card img {
+                margin: 20px 0;
+                object-fit: cover;
+                border-radius: 7px;
+                height: 300px;
+                width: 100%;
+            }
+            .card .description {
+                color: #808080;
+            }
+
+            
+
+
+            @media only screen and (max-device-width: 850px) {
+                body {
+                    zoom: 2;
+                }
+                #pagewrapper {
+                    flex-direction: column;
+                    height: 50vh;
+                }
+                #sideimage {
+                    height: 30%;
+                    width: 100%;
+                }
+                #sidecontent {
+                    height: 70%;
+                    width: 100%;
+                }
+
+            }
+        </style>
+
+
+        <style>
             
         </style>
         <script>
@@ -87,6 +188,13 @@
                         clearTimeout(typer);
                     }
                 }, 70);
+                document.getElementById('more').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById('morewrapper').style.display = 'flex';
+                    document.getElementById('morewrapper').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
             }
         </script>
         <title>@mlntcandy</title>
@@ -111,8 +219,23 @@
                     </div>
                     <div class="caption">frontend: vanilla js, html, css</div>
                     <div class="caption">backend: node.js, php</div>
+                    <div class="caption" id="more"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="20px" height="10px" viewBox="0 0 960 560" enable-background="new 0 0 960 560" xml:space="preserve">
+                   <g id="Rounded_Rectangle_33_copy_4_1_" fill="#afafaf">
+                       <path d="M480,344.181L268.869,131.889c-15.756-15.859-41.3-15.859-57.054,0c-15.754,15.857-15.754,41.57,0,57.431l237.632,238.937
+                           c8.395,8.451,19.562,12.254,30.553,11.698c10.993,0.556,22.159-3.247,30.555-11.698l237.631-238.937
+                           c15.756-15.86,15.756-41.571,0-57.431s-41.299-15.859-57.051,0L480,344.181z"/>
+                   </g>
+                   </svg> my stuff</div>
                 </div>
             </div>
+        </div>
+        <div id="morewrapper" style="display: none;">
+            <a class="card">
+                <div class="title">nothing here yet</div>
+                <!-- img src="assets/side.png" -->
+                <div class="description">expect something cool here soon!</div>
+            </a>
         </div>
     </body>
 </html>
