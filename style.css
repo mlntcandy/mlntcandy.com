@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 23px;
+
+    margin: 0;
+    background-color: #222;
+    color: #AFB6C1;
+
+    text-align: center;
+}
+
+b {
+    color: #FFF;
+    font-weight: 600;
+}
+
+a {
+    color: #FFF;
+    /* transform: translateY(0);
+    transition: transform .1s ease; */
+}
+
+
+span.alt { display: none; }
+
+header {
+    position: relative;
+    height: 500px;
+    background-color: #30393E;
+}
+
+.top {
+    padding: 24px 0;
+}
+
+.icons {
+    margin-top: 50px;
+}
+
+.icons a {
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.icons a svg {
+    fill: #CCC;
+    transition: .1s ease;
+}
+
+.icons a:hover svg {
+    fill: #FFF;
+}
+
+.greeting {
+    max-width: 1000px;
+    padding: 0 2rem;
+    margin: 2.5rem auto;
+}
+
+.stufflist {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.stufflist ul {
+    text-align: left;
+}
+
+
+footer {
+    padding: 24px 0;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.specialties {
+    margin-top: 200px;
+}
+
+
+.stufflist ul li span.pi {
+    width: 0em;
+    margin: 0 0 0 0em;
+    transition: .1s ease;
+}
+
+.stufflist ul li:hover span.pi {
+    width: 1em;
+    margin: 0 0 0 .2em;
+}

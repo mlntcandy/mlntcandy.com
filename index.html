@@ -1,241 +1,76 @@
-<html>
-    <head>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
-        <link href="assets/mlntc-icons/style.css" rel="stylesheet">
-        <style>
-            html {
-                overflow-y: scroll;
-            }
-            html::-webkit-scrollbar {
-                width: 5px;
-                background-color: rgba(0,0,0,0);
-            }
-
-            html::-webkit-scrollbar-thumb {
-                background: #afafaf;
-                border-radius: 5px;
-            }
-            @keyframes blink {
-                50%,90% {
-                    opacity: 0;
-                }
-                0%,40%,100% {
-                    opacity: 1;
-                }
-            }
-            @keyframes fadein {
-                0% {
-                    opacity: 0;
-                    transform: scale(0.9);
-                }
-                100% {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-            }
-            body {
-                margin: 0;
-                background-color: #111;
-                background-image: linear-gradient(120deg, rgba(0,0,0,1) 0%, rgba(17,17,17,1) 100%);
-                color: #fff;
-                font-family: 'Roboto Mono', monospace;
-            }
-            #pagewrapper {
-                display: flex;
-                flex-direction: row;
-                height: 100vh;
-                width: 100%;
-                animation: fadein 0.5s ease 0s 1;
-            }
-            #morewrapper {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                min-height: 100vh;
-                width: 100%;
-                background-color: rgba(255, 255, 255, 0.03);
-            }
-            #sideimage {
-                background-image: url('assets/side.jpg');
-                height: 100%;
-                width: 35%;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                position: relative;
-            }
-            #sideimage #menu {
-                background-color: rgba(0,0,0,0.5);
-                padding: 15px 5px;
-                margin: 5px;
-                border-radius: 7px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-            }
-            #sidecontent {
-                height: 100%;
-                width: 65%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-            #contentwrapper {
-                margin: 0 20%;
-            }
-            #title {
-                font-size: 320%;
-                margin: 0 0 40px 0;
-            }
-            .content {
-                margin: 10px 0;
-            }
-            .caption {
-                color: #808080;
-            }
-            a {
-                color: rgb(212, 212, 212);
-                text-decoration: none;
-                transition: ease-in-out 0.2s color;
-            }
-            a:hover {
-                color: white;
-            }
-            #titlecursor {
-                animation: blink 1s infinite;
-            }
-            #more {
-                margin-top: 20px;
-                color: #afafaf;
-                font-size: 120%;
-                letter-spacing: 2px;
-                cursor: pointer;
-                transition: 0.2s ease;
-            }
-            #more:hover {
-                letter-spacing: 4px;
-                color: #cfcfcf;
-            }
-
-            .card {
-                background-color: rgba(0,0,0,0.5);
-                border-radius: 7px;
-                margin: 20px 10px;
-                padding: 20px;
-                display: inline-block;
-                align-items: center;
-                width: 400px;
-                transition: .2s ease;
-            }
-            .card:hover {
-                transform: scale(1.02);
-                filter: brightness(1.3);
-            }
-            .card .title {
-                font-size: 200%;
-                margin: 20px 0;
-            }
-            .card img {
-                margin: 20px 0;
-                object-fit: cover;
-                border-radius: 7px;
-                height: 300px;
-                width: 100%;
-            }
-            .card .description {
-                color: #808080;
-            }
-
-            
-
-
-            @media only screen and (max-device-width: 850px) {
-                body {
-                    zoom: 2;
-                }
-                #pagewrapper {
-                    flex-direction: column;
-                    height: 50vh;
-                }
-                #sideimage {
-                    height: 30%;
-                    width: 100%;
-                }
-                #sidecontent {
-                    height: 70%;
-                    width: 100%;
-                }
-
-            }
-        </style>
-
-
-        <style>
-            
-        </style>
-        <script>
-            window.onload = function() {
-                var title = '@mlntcandy'.split('');
-                var titleDOM = document.getElementById('title');
-                var i = 0;
-                var typed = '';
-                var typer = setInterval(function() {
-                    typed = typed + title[i];
-                    titleDOM.innerHTML = typed + '<span id="titlecursor">_</span>';
-                    i++;
-                    if (title.length == i) {
-                        clearTimeout(typer);
-                    }
-                }, 70);
-                document.getElementById('more').addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.getElementById('morewrapper').style.display = 'flex';
-                    document.getElementById('morewrapper').scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            }
-        </script>
-        <title>@mlntcandy</title>
-    </head>
-
-    <body>
-        <div id="pagewrapper">
-            <div id="sideimage">
-                <div id="menu">
-                    <a href="https://github.com/mlntcandy"><span class="icon-github"></span> Github</a>
-                    <a href="https://t.me/mlntcandy"><span class="icon-telegram"></span> Telegram</a>
-                    <a href="mailto:me@mlntcandy.com"><span class="icon-mail"></span> me@mlntcandy.com</a>
-                </div>
-            </div>
-            <div id="sidecontent">
-                <div id="contentwrapper">
-                    <div id="title">
-                        @mlntcandy
-                    </div>
-                    <div class="content">
-                        full stack web-developer & designer
-                    </div>
-                    <div class="caption">frontend: vanilla js, html, css</div>
-                    <div class="caption">backend: node.js, php</div>
-                    <div class="caption" id="more"><svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        width="20px" height="10px" viewBox="0 0 960 560" enable-background="new 0 0 960 560" xml:space="preserve">
-                   <g id="Rounded_Rectangle_33_copy_4_1_" fill="#afafaf">
-                       <path d="M480,344.181L268.869,131.889c-15.756-15.859-41.3-15.859-57.054,0c-15.754,15.857-15.754,41.57,0,57.431l237.632,238.937
-                           c8.395,8.451,19.562,12.254,30.553,11.698c10.993,0.556,22.159-3.247,30.555-11.698l237.631-238.937
-                           c15.756-15.86,15.756-41.571,0-57.431s-41.299-15.859-57.051,0L480,344.181z"/>
-                   </g>
-                   </svg> my stuff</div>
-                </div>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="programming-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <title>mlntcandy</title>
+</head>
+<body>
+    <header>
+        <div class="top">
+            This is my dev page. <a href="">Personal stuff</a>
         </div>
-        <div id="morewrapper" style="display: none;">
-            <a class="card">
-                <div class="title">nothing here yet</div>
-                <!-- img src="assets/side.png" -->
-                <div class="description">expect something cool here soon!</div>
+        <div class="icons">
+            <a href="https://github.com/mlntcandy">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.0671 7.42088e-06C10.7276 -0.00345945 7.4961 1.20791 4.95162 3.41703C2.40713 5.62616 0.716017 8.68865 0.181328 12.0556C-0.353361 15.4227 0.303327 18.8741 2.03371 21.7915C3.7641 24.7089 6.45506 26.9015 9.62436 27.9764C10.3317 28.1086 10.582 27.6592 10.582 27.2803C10.582 26.9014 10.582 26.0379 10.582 24.8396C6.65682 25.7119 5.82866 22.9098 5.82866 22.9098C5.56827 22.0413 5.01507 21.2953 4.26725 20.8039C2.99913 19.9228 4.37076 19.9228 4.37076 19.9228C4.81529 19.9868 5.2397 20.1535 5.61186 20.41C5.98402 20.6665 6.29416 21.006 6.51879 21.403C6.70967 21.7566 6.96701 22.0681 7.27604 22.3198C7.58508 22.5715 7.93972 22.7583 8.31964 22.8697C8.69959 22.981 9.09728 23.0146 9.48996 22.9686C9.88255 22.9226 10.2625 22.7978 10.6078 22.6014C10.662 21.8766 10.9679 21.1953 11.4705 20.6805C8.34764 20.3193 5.06952 19.0856 5.06952 13.6313C5.04808 12.2065 5.56389 10.8279 6.51017 9.78074C6.08872 8.54186 6.13798 7.18653 6.6482 5.98299C6.6482 5.98299 7.83004 5.59529 10.5129 7.45451C12.8168 6.80841 15.2484 6.80841 17.5523 7.45451C20.2352 5.59529 21.4084 5.98299 21.4084 5.98299C21.9257 7.17379 21.9873 8.51938 21.5809 9.75426C22.5272 10.8014 23.043 12.1801 23.0216 13.6049C23.0216 19.1209 19.7348 20.3281 16.6033 20.6541C16.9391 20.9988 17.1983 21.4133 17.3636 21.8694C17.5288 22.3255 17.5961 22.8125 17.5609 23.2975C17.5609 25.2184 17.5609 26.7693 17.5609 27.2363C17.5609 27.7033 17.811 28.0645 18.5271 27.9235C21.6603 26.8203 24.3109 24.6214 26.0108 21.7154C27.7106 18.8094 28.3502 15.3832 27.8166 12.0422C27.2829 8.70113 25.6105 5.66028 23.0946 3.45677C20.5786 1.25325 17.3812 0.0288995 14.0671 7.42088e-06Z"/>
+                </svg>
+                <span class="alt">GitHub</span>
+            </a>
+            <a href="https://t.me/mlntcandy">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM14.5017 10.3354C13.14 10.9018 10.4185 12.0741 6.3372 13.8522C5.67446 14.1158 5.32729 14.3736 5.29568 14.6257C5.24227 15.0518 5.77582 15.2195 6.50237 15.448C6.6012 15.4791 6.7036 15.5113 6.80858 15.5454C7.5234 15.7777 8.48495 16.0496 8.98482 16.0604C9.43825 16.0702 9.94434 15.8832 10.5031 15.4996C14.3163 12.9255 16.2848 11.6244 16.4083 11.5964C16.4955 11.5766 16.6164 11.5517 16.6982 11.6245C16.7801 11.6973 16.772 11.835 16.7634 11.872C16.7105 12.0973 14.6161 14.0445 13.5323 15.0521C13.1944 15.3662 12.9547 15.589 12.9057 15.6399C12.796 15.7539 12.6841 15.8617 12.5766 15.9654C11.9125 16.6056 11.4145 17.0856 12.6042 17.8696C13.1759 18.2463 13.6334 18.5579 14.0898 18.8687C14.5882 19.2081 15.0853 19.5467 15.7285 19.9683C15.8924 20.0757 16.0489 20.1873 16.2014 20.296C16.7814 20.7095 17.3025 21.081 17.9463 21.0218C18.3204 20.9873 18.7069 20.6356 18.9031 19.5864C19.3669 17.107 20.2786 11.7349 20.4892 9.52114C20.5077 9.32719 20.4845 9.07897 20.4658 8.97C20.4472 8.86104 20.4082 8.70579 20.2666 8.59087C20.0988 8.45476 19.8399 8.42606 19.7241 8.4281C19.1975 8.43738 18.3896 8.71829 14.5017 10.3354Z"/>
+                </svg>
+                <span class="alt">Telegram</span>
+            </a>
+            <a href="https://vk.com/mlntcandy">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.96824 1.96824C0 3.93648 0 7.1043 0 13.44V14.56C0 20.8957 0 24.0635 1.96824 26.0318C3.93648 28 7.1043 28 13.44 28H14.56C20.8957 28 24.0635 28 26.0318 26.0318C28 24.0635 28 20.8957 28 14.56V13.44C28 7.1043 28 3.93648 26.0318 1.96824C24.0635 0 20.8957 0 14.56 0H13.44C7.1043 0 3.93648 0 1.96824 1.96824ZM4.72507 8.51672C4.87674 15.7967 8.51673 20.1717 14.8984 20.1717H15.2601V16.0067C17.6051 16.2401 19.3783 17.9551 20.09 20.1717H23.4034C22.4934 16.8584 20.1016 15.0267 18.6083 14.3267C20.1016 13.4634 22.2016 11.3634 22.7033 8.51672H19.6932C19.0399 10.8267 17.1034 12.9267 15.2601 13.1251V8.51672H12.25V16.5901C10.3833 16.1234 8.02672 13.8601 7.92172 8.51672H4.72507Z"/>
+                </svg>
+                <span class="alt">VK</span>
             </a>
         </div>
-    </body>
+        <div class="logo"><img src="/res/mlntcandy.svg" height="117px" alt="mlntcandy"></div>
+        <div class="specialties">
+            <b>full stack web-developer & designer</b>
+            <br><br>
+            frontend: vanilla js, react, html, css
+            <br>
+            backend: node.js, php
+        </div>
+    </header>
+    <main>
+        <div class="greeting">
+            <b>hello!</b> my name is Alexander and i am addicted to coding. primarily focusing on the frontend. the technologies i use and am familiar with are:
+        </div>
+        <div class="stufflist">
+            <b>frontend stuff:</b>
+            <ul>
+                <li>typescript<span class="pi ts"></span></li>
+                <li>javascript<span class="pi js"></span></li>
+                <li>react<span class="pi react"></span></li>
+                <li>node<span class="pi node"></span> and npm<span class="pi npm"></span></li>
+                <li>html<span class="pi html"></span>+css<span class="pi css"></span></li>
+            </ul>
+            <b>backend stuff:</b>
+            <ul>
+                <li>node<span class="pi node"></span> and npm<span class="pi npm"></span></li>
+                <li>typescript<span class="pi ts"></span></li>
+                <li>mysql<span class="pi mysql"></span> and mongodb<span class="pi mongo"></span></li>
+                <li>express<span class="pi express"></span></li>
+                <li>php<span class="pi php"></span></li>
+            </ul>
+            <b>design stuff:</b>
+            <ul>
+                <li>this page :)</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        Made by mlntcandy in 2022.
+    </footer>
+</body>
 </html>

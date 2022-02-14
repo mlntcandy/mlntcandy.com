@@ -1,0 +1,41 @@
+span.pi {
+    display: inline-block;
+    background-size: 1em;
+    width: 1em;
+    height: 1em;
+    margin: 0 0 0 .2em;
+}
+
+span.pi.css {
+    background-image: url(/res/langs/css.svg);
+}
+span.pi.express {
+    background-image: url(/res/langs/express.svg);
+}
+span.pi.html {
+    background-image: url(/res/langs/html.svg);
+}
+span.pi.js {
+    background-image: url(/res/langs/js.svg);
+}
+span.pi.mongo {
+    background-image: url(/res/langs/mongo.svg);
+}
+span.pi.mysql {
+    background-image: url(/res/langs/mysql.svg);
+}
+span.pi.node {
+    background-image: url(/res/langs/node.svg);
+}
+span.pi.npm {
+    background-image: url(/res/langs/npm.svg);
+}
+span.pi.php {
+    background-image: url(/res/langs/php.svg);
+}
+span.pi.react {
+    background-image: url(/res/langs/react.svg);
+}
+span.pi.ts {
+    background-image: url(/res/langs/ts.svg);
+}
