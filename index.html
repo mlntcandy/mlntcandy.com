@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="programming-icons.css">
     <link rel="stylesheet" href="style.css">
+    <script>
+        if (window.location.search) {
+            var url = window.location.href.split('/');
+            url[url.length-1] = window.location.search.replace('?', '') + '.html';
+            window.location.replace(url.join('/'));
+        }
+    </script>
     <title>mlntcandy</title>
 </head>
 <body>
