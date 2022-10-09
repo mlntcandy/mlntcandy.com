@@ -1,0 +1,12 @@
+---
+export interface Props {
+    text: string,
+    type: 'primary' | 'secondary'
+}
+
+const { text, type } = Astro.props
+---
+
+<button class={`${type == 'primary' ? 'bg-primary' : 'bg-secondary'} px-4 py-2 rounded-lg text-black font-bold`}>
+    {text}
+</button>

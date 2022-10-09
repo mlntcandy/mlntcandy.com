@@ -1,0 +1,11 @@
+---
+export interface Props {
+    header?: boolean
+    class?: string
+}
+const { header } = Astro.props
+---
+
+<section class={"m-5 rounded-3xl shadow-xl bg-shallowslate" + (header ? " bg-seastone h-96 " : " ") + Astro.props.class}>
+    <slot />
+</section>

@@ -1,11 +1,35 @@
 ---
-import Button from '../components/Button.astro';
+import Button from '../components/Button.astro'
+import { InteractiveBox } from '../components/InteractiveBox'
+import SocialLink from '../components/SocialLink.astro';
 import Layout from '../layouts/Layout.astro'
-import Section from '../layouts/Section.astro';
+import Section from '../layouts/Section.astro'
 ---
 
 <Layout title="Hello, world!">
+	<header>
+		<Section header={true} class="text-center grid justify-center align-middle justify-items-center">
+			<InteractiveBox displayname="Links" class="my-auto" client:load>
+				<div class="flex w-40 justify-between p-2">
+					<SocialLink icon="Github" name="GitHub" link="https://github.com/mlntcandy" />
+					<SocialLink icon="Telegram" name="Telegram" link="https://t.me/mlntcandy" />
+					<SocialLink icon="VK" name="VK" link="https://vk.com/mlntcandy" />
+				</div>
+			</InteractiveBox>
+			<InteractiveBox displayname="Logo" class="my-auto" client:load>
+				<img src="/mlntcandy.svg" draggable="false" class="h-24 md:h-28" />
+			</InteractiveBox>
+			<InteractiveBox displayname="About" class="my-auto font-bold" client:load>
+				full stack web-developer & designer
+			</InteractiveBox>
+			<InteractiveBox displayname="More" class="my-auto font-medium" client:load>
+				maybe see what i am about lol?
+			</InteractiveBox>
+		</Section>
+	</header>
 	<main>
-		<h1>Hello, world!</h1>
+		<Section>
+			yo
+		</Section>
 	</main>
 </Layout>

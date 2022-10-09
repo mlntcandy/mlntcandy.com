@@ -1,0 +1,26 @@
+---
+import { Icon } from 'astro-icon'
+
+export interface Props {
+    link: string
+    name: string
+    icon: string
+}
+
+const { link, name, icon } = Astro.props
+---
+
+<a href={link} class="relative group-scoped">
+    <div class="absolute bg-secondary text-black px-2 py-1 rounded -rotate-45 -left-10 opacity-0 group-scoped-hover:opacity-100 pointer-events-none">
+        {name}
+    </div>
+    <div class="w-8 h-8">
+        <Icon name={icon} />
+    </div>
+</a>
+
+<style>
+    svg {
+        fill: currentColor;
+    }
+</style>
