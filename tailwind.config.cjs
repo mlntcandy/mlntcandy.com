@@ -10,6 +10,11 @@ module.exports = {
 				'deepslate': '#222222',
 				'shallowslate': '#262829'
 			}
+		},
+		fontFamily: {
+			'mono': ['DM Mono', 'monospace'],
+			'display': ['Inter', 'ui-sans-serif'],
+			'sans': ['Inter', 'ui-sans-serif']
 		}
 	},
 	plugins: [],
